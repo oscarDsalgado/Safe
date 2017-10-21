@@ -44,6 +44,7 @@
     <Compile Include="cap_tipo.cs" />
     <Compile Include="categoria.cs" />
     <Compile Include="empresa.cs" />
+    <Compile Include="Pregunta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

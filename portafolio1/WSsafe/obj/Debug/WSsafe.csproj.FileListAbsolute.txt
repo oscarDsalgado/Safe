@@ -1,0 +1,2 @@
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsafe\obj\Debug\WSsafe.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsafe\obj\Debug\WSsafe.csproj.CoreCompileInputs.cache

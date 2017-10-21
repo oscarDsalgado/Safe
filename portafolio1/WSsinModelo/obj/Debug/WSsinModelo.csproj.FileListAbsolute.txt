@@ -1,0 +1,7 @@
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\bin\WSsinModelo.dll.config
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\bin\WSsinModelo.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\bin\WSsinModelo.pdb
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\obj\Debug\WSsinModelo.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\obj\Debug\WSsinModelo.csproj.CoreCompileInputs.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\obj\Debug\WSsinModelo.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\WSsinModelo\obj\Debug\WSsinModelo.pdb

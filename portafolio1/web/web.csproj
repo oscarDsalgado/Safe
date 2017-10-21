@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21006919-1904-4546-ABE5-A4AB23DD9203}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>web</RootNamespace>
+    <AssemblyName>web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfArea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfCap_tipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfCategoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfEmpresa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.DevuelveTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.GetlistarEmpresaListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.GetListarTipoCapResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.GuardarCapacitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.GuardarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.listarAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ListarCategoriasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ListarCategoriasXtipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfCapacitacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ListarCapacitacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\wsa1.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="estilos\estilo1.css" />
+    <Content Include="EvaluacionAdd.aspx" />
+    <Content Include="ClenteCert.aspx" />
+    <Content Include="ClenteListC.aspx" />
+    <Content Include="ClenteListVi.aspx" />
+    <Content Include="ClenteListEv.aspx" />
+    <Content Include="loginrespaldo.aspx" />
+    <Content Include="sample.aspx" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="SupervListIn.aspx" />
+    <Content Include="SupercapAAdd.aspx" />
+    <Content Include="SupercapAEdit.aspx" />
+    <Content Include="SupercapAList.aspx" />
+    <Content Include="SupercapAdd.aspx" />
+    <Content Include="SupercapEdit.aspx" />
+    <Content Include="SupercapList.aspx" />
+    <Content Include="SuperVisAdd.aspx" />
+    <Content Include="SuperVisEdit.aspx" />
+    <Content Include="MedicoConfirm.aspx" />
+    <Content Include="MedicoAtenAdd.aspx" />
+    <Content Include="MedicoAtenEdit.aspx" />
+    <Content Include="MedicoExamAdd.aspx" />
+    <Content Include="MedicoExamEdit.aspx" />
+    <Content Include="IngenieroListEv.aspx" />
+    <Content Include="IngenieroInfoAdd.aspx" />
+    <Content Include="TrabajadorHistA.aspx" />
+    <Content Include="TrabajadorHistV.aspx" />
+    <Content Include="TrabajadorHistC.aspx" />
+    <Content Include="TrabajadorVisitP.aspx" />
+    <Content Include="TrabajadorCapacP.aspx" />
+    <Content Include="TecnicoEdit.aspx" />
+    <Content Include="TecnicoListEv.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Log_in.aspx" />
+    <Content Include="Site1.Master" />
+    <Content Include="packages.config" />
+    <None Include="Connected Services\ServiceReference1\wsa1.wsdl" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewFolder1\Logo_SAFE.PNG" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionAdd.aspx.cs">
+      <DependentUpon>EvaluacionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvaluacionAdd.aspx.designer.cs">
+      <DependentUpon>EvaluacionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClenteCert.aspx.cs">
+      <DependentUpon>ClenteCert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClenteCert.aspx.designer.cs">
+      <DependentUpon>ClenteCert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClenteListC.aspx.cs">
+      <DependentUpon>ClenteListC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClenteListC.aspx.designer.cs">
+      <DependentUpon>ClenteListC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClenteListVi.aspx.cs">
+      <DependentUpon>ClenteListVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClenteListVi.aspx.designer.cs">
+      <DependentUpon>ClenteListVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClenteListEv.aspx.cs">
+      <DependentUpon>ClenteListEv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClenteListEv.aspx.designer.cs">
+      <DependentUpon>ClenteListEv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginrespaldo.aspx.cs">
+      <DependentUpon>loginrespaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginrespaldo.aspx.designer.cs">
+      <DependentUpon>loginrespaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sample.aspx.cs">
+      <DependentUpon>sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sample.aspx.designer.cs">
+      <DependentUpon>sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervListIn.aspx.cs">
+      <DependentUpon>SupervListIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervListIn.aspx.designer.cs">
+      <DependentUpon>SupervListIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapAAdd.aspx.cs">
+      <DependentUpon>SupercapAAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapAAdd.aspx.designer.cs">
+      <DependentUpon>SupercapAAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapAEdit.aspx.cs">
+      <DependentUpon>SupercapAEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapAEdit.aspx.designer.cs">
+      <DependentUpon>SupercapAEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapAList.aspx.cs">
+      <DependentUpon>SupercapAList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapAList.aspx.designer.cs">
+      <DependentUpon>SupercapAList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapAdd.aspx.cs">
+      <DependentUpon>SupercapAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapAdd.aspx.designer.cs">
+      <DependentUpon>SupercapAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapEdit.aspx.cs">
+      <DependentUpon>SupercapEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapEdit.aspx.designer.cs">
+      <DependentUpon>SupercapEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupercapList.aspx.cs">
+      <DependentUpon>SupercapList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupercapList.aspx.designer.cs">
+      <DependentUpon>SupercapList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperVisAdd.aspx.cs">
+      <DependentUpon>SuperVisAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperVisAdd.aspx.designer.cs">
+      <DependentUpon>SuperVisAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperVisEdit.aspx.cs">
+      <DependentUpon>SuperVisEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperVisEdit.aspx.designer.cs">
+      <DependentUpon>SuperVisEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoConfirm.aspx.cs">
+      <DependentUpon>MedicoConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoConfirm.aspx.designer.cs">
+      <DependentUpon>MedicoConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoAtenAdd.aspx.cs">
+      <DependentUpon>MedicoAtenAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoAtenAdd.aspx.designer.cs">
+      <DependentUpon>MedicoAtenAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoAtenEdit.aspx.cs">
+      <DependentUpon>MedicoAtenEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoAtenEdit.aspx.designer.cs">
+      <DependentUpon>MedicoAtenEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoExamAdd.aspx.cs">
+      <DependentUpon>MedicoExamAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoExamAdd.aspx.designer.cs">
+      <DependentUpon>MedicoExamAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoExamEdit.aspx.cs">
+      <DependentUpon>MedicoExamEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoExamEdit.aspx.designer.cs">
+      <DependentUpon>MedicoExamEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngenieroListEv.aspx.cs">
+      <DependentUpon>IngenieroListEv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngenieroListEv.aspx.designer.cs">
+      <DependentUpon>IngenieroListEv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngenieroInfoAdd.aspx.cs">
+      <DependentUpon>IngenieroInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngenieroInfoAdd.aspx.designer.cs">
+      <DependentUpon>IngenieroInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorHistA.aspx.cs">
+      <DependentUpon>TrabajadorHistA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrabajadorHistA.aspx.designer.cs">
+      <DependentUpon>TrabajadorHistA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorHistV.aspx.cs">
+      <DependentUpon>TrabajadorHistV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrabajadorHistV.aspx.designer.cs">
+      <DependentUpon>TrabajadorHistV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorHistC.aspx.cs">
+      <DependentUpon>TrabajadorHistC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrabajadorHistC.aspx.designer.cs">
+      <DependentUpon>TrabajadorHistC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorVisitP.aspx.cs">
+      <DependentUpon>TrabajadorVisitP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrabajadorVisitP.aspx.designer.cs">
+      <DependentUpon>TrabajadorVisitP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorCapacP.aspx.cs">
+      <DependentUpon>TrabajadorCapacP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrabajadorCapacP.aspx.designer.cs">
+      <DependentUpon>TrabajadorCapacP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicoEdit.aspx.cs">
+      <DependentUpon>TecnicoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicoEdit.aspx.designer.cs">
+      <DependentUpon>TecnicoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicoListEv.aspx.cs">
+      <DependentUpon>TecnicoListEv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicoListEv.aspx.designer.cs">
+      <DependentUpon>TecnicoListEv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Log_in.aspx.cs">
+      <DependentUpon>Log_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Log_in.aspx.designer.cs">
+      <DependentUpon>Log_in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{187d7ada-5b7f-4703-9dcb-d69e7c34c82b}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52220</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52220/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

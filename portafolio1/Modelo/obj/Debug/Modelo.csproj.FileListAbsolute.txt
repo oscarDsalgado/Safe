@@ -1,0 +1,10 @@
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\Modelo.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\EntityFramework.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\EntityFramework.xml
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\obj\Debug\Modelo.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo\bin\Debug\EntityFramework.SqlServer.xml

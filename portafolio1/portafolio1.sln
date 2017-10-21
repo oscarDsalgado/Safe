@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "web\web.csproj", "{21006919-1904-4546-ABE5-A4AB23DD9203}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3796C148-0F52-43EC-9FA8-C31505727A5B}"
+	ProjectSection(SolutionItems) = preProject
+		imagen\Logo_SAFE.PNG = imagen\Logo_SAFE.PNG
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{187D7ADA-5B7F-4703-9DCB-D69E7C34C82B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21006919-1904-4546-ABE5-A4AB23DD9203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21006919-1904-4546-ABE5-A4AB23DD9203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21006919-1904-4546-ABE5-A4AB23DD9203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21006919-1904-4546-ABE5-A4AB23DD9203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187D7ADA-5B7F-4703-9DCB-D69E7C34C82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187D7ADA-5B7F-4703-9DCB-D69E7C34C82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187D7ADA-5B7F-4703-9DCB-D69E7C34C82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187D7ADA-5B7F-4703-9DCB-D69E7C34C82B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00FDEDD8-93CC-4E70-A6AF-48864ECA11B6}
+	EndGlobalSection
+EndGlobal

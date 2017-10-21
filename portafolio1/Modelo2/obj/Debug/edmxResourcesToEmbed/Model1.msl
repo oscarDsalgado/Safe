@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="CAPACITACION">
+      <EntityTypeMapping TypeName="Model.CAPACITACION">
+        <MappingFragment StoreEntitySet="CAPACITACION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA">
+      <EntityTypeMapping TypeName="Model.EMPRESA">
+        <MappingFragment StoreEntitySet="EMPRESA">
+          <ScalarProperty Name="RUT_EMPRESA" ColumnName="RUT_EMPRESA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVALUACION">
+      <EntityTypeMapping TypeName="Model.EVALUACION">
+        <MappingFragment StoreEntitySet="EVALUACION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXAMEN">
+      <EntityTypeMapping TypeName="Model.EXAMEN">
+        <MappingFragment StoreEntitySet="EXAMEN">
+          <ScalarProperty Name="ID_EVALUACION" ColumnName="ID_EVALUACION" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICO">
+      <EntityTypeMapping TypeName="Model.MEDICO">
+        <MappingFragment StoreEntitySet="MEDICO">
+          <ScalarProperty Name="RUT_MEDICO" ColumnName="RUT_MEDICO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="EMPRESA_RUT_EMPRESA" ColumnName="EMPRESA_RUT_EMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ATENCION_MEDICA">
+      <EntityTypeMapping TypeName="Model.ATENCION_MEDICA">
+        <MappingFragment StoreEntitySet="ATENCION_MEDICA">
+          <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+          <ScalarProperty Name="MEDICO_RUT_MEDICO" ColumnName="MEDICO_RUT_MEDICO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+          <ScalarProperty Name="EXAMEN_ID_EVALUACION" ColumnName="EXAMEN_ID_EVALUACION" />
+          <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EV_EMP">
+      <EntityTypeMapping TypeName="Model.EV_EMP">
+        <MappingFragment StoreEntitySet="EV_EMP">
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="EVALUACION_ID" ColumnName="EVALUACION_ID" />
+          <ScalarProperty Name="EMPRESA_RUT_EMPRESA" ColumnName="EMPRESA_RUT_EMPRESA" />
+          <ScalarProperty Name="OBSERVACION_TECNICO" ColumnName="OBSERVACION_TECNICO" />
+          <ScalarProperty Name="OBSERVACION_INGENIERO" ColumnName="OBSERVACION_INGENIERO" />
+          <ScalarProperty Name="ESTADO_EV" ColumnName="ESTADO_EV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="US_CAP">
+      <EntityTypeMapping TypeName="Model.US_CAP">
+        <MappingFragment StoreEntitySet="US_CAP">
+          <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="CAPACITACION_ID" ColumnName="CAPACITACION_ID" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

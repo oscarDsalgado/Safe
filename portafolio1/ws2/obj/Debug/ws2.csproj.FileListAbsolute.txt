@@ -1,0 +1,7 @@
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\bin\ws2.dll.config
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\bin\ws2.dll
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\bin\ws2.pdb
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\bin\Oracle.ManagedDataAccess.dll
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\obj\Debug\ws2.dll
+C:\Users\Sesaru\documents\visual studio 2013\Projects\portafolio1\ws2\obj\Debug\ws2.pdb

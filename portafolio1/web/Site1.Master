@@ -1,0 +1,256 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="web.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#D1D1D1">
+    <form id="form1" runat="server">
+   
+        
+	
+        <div style="text-align: center">
+        <img src="NewFolder1/BANNER.jpg" style="text-align: center" /> 
+            </div>
+	<div class="panel-body">
+
+	  <div>
+
+        <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	       <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.aspx">Home</a>
+    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+<%--     Menu tecnico       --%>
+	      <ul class="nav navbar-nav" id="menuTecnico" runat="server">
+	   
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+                  <li><a href="TecnicoListEv.aspx">Listar evaluaciones</a></li>
+	            <li><a href="EvaluacionAdd.aspx">Nueva evaluación</a></li>
+
+	            
+	          </ul>
+	        </li>
+              
+          
+	       
+	      </ul>
+
+ <%--     Menu trabajador       --%>
+             <ul class="nav navbar-nav" id="menuTrabajador" runat="server">
+	     
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Historial <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="TrabajadorHistA.aspx">Atenciones</a></li>
+                  <li><a href="TrabajadorHistV.aspx">Visitas médicas</a></li>
+                  <li><a href="TrabajadorHistC.aspx">Capacitaciones</a></li>
+	            
+	          </ul>
+	        </li>
+              <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas medicas <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="TrabajadorVisitP.aspx">Proximas visitas</a></li>
+
+	            
+	          </ul>
+	        </li>
+              <li class="dropdown" >
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Certificaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="TrabajadorCapacP.aspx">Proximas capacitaciones</a></li>
+
+	            
+	          </ul>
+	        </li>
+	       
+	      </ul>
+
+ <%--     Menu Cliente       --%>
+             <ul class="nav navbar-nav" id="menuCliente" runat="server">
+	     
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="ClenteListEv.aspx">Listar evaluaciones</a></li>
+               
+	            
+	          </ul>
+	        </li>
+              <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="ClenteListVi.aspx">Listar visitas</a></li>
+
+	            
+	          </ul>
+	        </li>
+              <li class="dropdown" >
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="ClenteListC.aspx">Listar capacitaciones</a></li>
+                   <li><a href="ClenteCert.aspx">Certificados</a></li>
+
+	            
+	          </ul>
+	        </li>
+	       
+	      </ul>
+
+
+
+<%--     Menu Ingeniero       --%>
+            <ul class="nav navbar-nav" id="menuIngeniero" runat="server">
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="IngenieroListEv.aspx">Listar evaluaciones</a></li>
+                  <li><a href="IngenieroInfoAdd.aspx">Nuevo informe</a></li>
+
+	            
+	          </ul>
+	        </li>
+
+
+              
+         
+	       
+	      </ul>
+<%--     Menu Medico       --%>
+            <ul class="nav navbar-nav" id="menuMedico" runat="server">
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atención <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="MedicoAtenAdd.aspx">Registrar atención</a></li>
+                  <li><a href="MedicoAtenEdit.aspx">Modificar atención</a></li>
+
+	            
+	          </ul>
+	        </li>
+
+                <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examen <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="MedicoExamAdd.aspx">Registrar examen</a></li>
+                  <li><a href="MedicoExamEdit.aspx">Modificar examen</a></li>
+
+	            
+	          </ul>
+	        </li>
+
+                <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="MedicoConfirm.aspx">Confirmar visita</a></li>
+               
+
+	            
+	          </ul>
+	        </li>
+              
+         
+	       
+	      </ul>
+
+
+<%--     Menu Supervisor       --%>
+            <ul class="nav navbar-nav" id="menuSupervisor" runat="server">
+	   
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Informes <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="SupervListIn.aspx">Listar Informes</a></li>
+
+	            
+	          </ul>
+	        </li>
+              
+              <li class="dropdown" >
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones anual <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+                   <li><a href="SupercapAAdd.aspx">Crear plan de capacitación anual</a></li>
+                   <li><a href="SupercapAEdit.aspx">Modificar plan de capacitación anual</a></li>
+	            <li><a href="SupercapAList.aspx">Listar capacitaciones anuales</a></li>
+
+	            
+	          </ul>
+	        </li>
+                 
+              
+              <li class="dropdown" >
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+                   <li><a href="SupercapAdd.aspx">Crear plan de capacitación </a></li>
+                   <li><a href="SupercapEdit.aspx">Modificar plan de capacitación </a></li>
+	            <li><a href="SupercapList.aspx">Listar capacitaciones</a></li>
+
+	            
+	          </ul>
+	        </li>
+                 <li class="dropdown" >
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="SuperVisAdd.aspx">Crear visita médica</a></li>
+                  <li><a href="SuperVisEdit.aspx">Modificar visitas</a></li>
+	            
+	          </ul>
+	        </li>
+	       
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	     <li><a>
+             <asp:Label ID="Label1" runat="server" Font-Bold="True"></asp:Label> <asp:Label ID="Label2" runat="server" Font-Bold="True"></asp:Label></a></li> 	
+        <li>
+            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+            </li>
+        
+        </ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    
+    </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+    </div>
+        
+    </form>
+</body>
+</html>

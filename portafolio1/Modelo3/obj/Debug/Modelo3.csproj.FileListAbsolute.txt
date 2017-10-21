@@ -1,0 +1,9 @@
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\bin\Debug\Modelo3.dll.config
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\bin\Debug\Modelo3.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\bin\Debug\Modelo3.pdb
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\bin\Debug\EntityFramework.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\bin\Debug\EntityFramework.xml
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\obj\Debug\Modelo3.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\obj\Debug\Modelo3.csproj.CoreCompileInputs.cache
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\obj\Debug\Modelo3.dll
+C:\Users\Sesaru\Documents\Visual Studio 2013\Projects\portafolio1\Modelo3\obj\Debug\Modelo3.pdb

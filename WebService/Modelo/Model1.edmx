@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PORTAFOLIO.ATENCION_MEDICA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ATENCION_MEDICA">
+          <Key>
+            <PropertyRef Name="USUARIO_RUT" />
+            <PropertyRef Name="MEDICO_RUT_MEDICO" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="LUGAR" />
+            <PropertyRef Name="EXAMEN_ID_EVALUACION" />
+            <PropertyRef Name="DIAGNOSTICO" />
+            <PropertyRef Name="ID_ATENCION" />
+          </Key>
+          <Property Name="USUARIO_RUT" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="MEDICO_RUT_MEDICO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="LUGAR" Type="varchar2" MaxLength="250" Nullable="false" />
+          <Property Name="EXAMEN_ID_EVALUACION" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DIAGNOSTICO" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="ID_ATENCION" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAPACITACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="LUGAR" Type="varchar2" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="RUT_EMPRESA" />
+          </Key>
+          <Property Name="RUT_EMPRESA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="250" Nullable="false" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EV_EMP">
+          <Key>
+            <PropertyRef Name="ID_EV" />
+          </Key>
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="EVALUACION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPRESA_RUT_EMPRESA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="OBSERVACION_TECNICO" Type="varchar2" MaxLength="255" />
+          <Property Name="OBSERVACION_INGENIERO" Type="varchar2" MaxLength="255" />
+          <Property Name="ESTADO_EV" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ID_EV" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EVALUACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="250" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EXAMEN">
+          <Key>
+            <PropertyRef Name="ID_EVALUACION" />
+          </Key>
+          <Property Name="ID_EVALUACION" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="RUT_MEDICO" />
+          </Key>
+          <Property Name="RUT_MEDICO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="APELLIDO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ESPECIALIDAD" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PORTAFOLIO.US_CAP' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="US_CAP">
+          <Key>
+            <PropertyRef Name="USUARIO_RUT" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="CAPACITACION_ID" />
+            <PropertyRef Name="OBSERVACION" />
+          </Key>
+          <Property Name="USUARIO_RUT" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="CAPACITACION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OBSERVACION" Type="varchar2" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="APELLIDO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="EMPRESA_RUT_EMPRESA" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="ATENCION_MEDICA_EXAMEN_FK">
+          <End Role="EXAMEN" Type="Self.EXAMEN" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXAMEN">
+              <PropertyRef Name="ID_EVALUACION" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="EXAMEN_ID_EVALUACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATENCION_MEDICA_MEDICO_FK">
+          <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICO">
+              <PropertyRef Name="RUT_MEDICO" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="MEDICO_RUT_MEDICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATENCION_MEDICA_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EV_EMP_EMPRESA_FK">
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="EV_EMP" Type="Self.EV_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT_EMPRESA" />
+            </Principal>
+            <Dependent Role="EV_EMP">
+              <PropertyRef Name="EMPRESA_RUT_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EV_EMP_EVALUACION_FK">
+          <End Role="EVALUACION" Type="Self.EVALUACION" Multiplicity="1" />
+          <End Role="EV_EMP" Type="Self.EV_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EVALUACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EV_EMP">
+              <PropertyRef Name="EVALUACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="US_CAP_CAPACITACION_FK">
+          <End Role="CAPACITACION" Type="Self.CAPACITACION" Multiplicity="1" />
+          <End Role="US_CAP" Type="Self.US_CAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAPACITACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="US_CAP">
+              <PropertyRef Name="CAPACITACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="US_CAP_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="US_CAP" Type="Self.US_CAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="US_CAP">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_EMPRESA_FK">
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT_EMPRESA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="EMPRESA_RUT_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PROCEDIMIENTO_TECNICO_INSERTAREVALUACION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PORTAFOLIO" StoreFunctionName="PROCEDIMIENTO_TECNICO.INSERTAREVALUACION">
+          <Parameter Name="FECH" Type="date" Mode="In" />
+          <Parameter Name="EVALU" Type="number" Mode="In" />
+          <Parameter Name="EMPRE" Type="varchar2" Mode="In" />
+          <Parameter Name="OBTECNICO" Type="varchar2" Mode="In" />
+          <Parameter Name="ESTADO" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="PROCEDIMIENTO_TECNICO_LISTAREVALUACION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PORTAFOLIO" StoreFunctionName="PROCEDIMIENTO_TECNICO.LISTAREVALUACION" />
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CAPACITACION" EntityType="Self.CAPACITACION" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="EV_EMP" EntityType="Self.EV_EMP" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="EVALUACION" EntityType="Self.EVALUACION" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="EXAMEN" EntityType="Self.EXAMEN" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="MEDICO" EntityType="Self.MEDICO" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="PORTAFOLIO" store:Type="Tables" />
+          <EntitySet Name="ATENCION_MEDICA" EntityType="Self.ATENCION_MEDICA" store:Type="Tables" store:Schema="PORTAFOLIO">
+            <DefiningQuery>SELECT 
+"ATENCION_MEDICA"."USUARIO_RUT" AS "USUARIO_RUT", 
+"ATENCION_MEDICA"."MEDICO_RUT_MEDICO" AS "MEDICO_RUT_MEDICO", 
+"ATENCION_MEDICA"."FECHA" AS "FECHA", 
+"ATENCION_MEDICA"."LUGAR" AS "LUGAR", 
+"ATENCION_MEDICA"."EXAMEN_ID_EVALUACION" AS "EXAMEN_ID_EVALUACION", 
+"ATENCION_MEDICA"."DIAGNOSTICO" AS "DIAGNOSTICO", 
+"ATENCION_MEDICA"."ID_ATENCION" AS "ID_ATENCION"
+FROM "PORTAFOLIO"."ATENCION_MEDICA" "ATENCION_MEDICA"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="US_CAP" EntityType="Self.US_CAP" store:Type="Tables" store:Schema="PORTAFOLIO">
+            <DefiningQuery>SELECT 
+"US_CAP"."USUARIO_RUT" AS "USUARIO_RUT", 
+"US_CAP"."FECHA" AS "FECHA", 
+"US_CAP"."CAPACITACION_ID" AS "CAPACITACION_ID", 
+"US_CAP"."OBSERVACION" AS "OBSERVACION"
+FROM "PORTAFOLIO"."US_CAP" "US_CAP"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="ATENCION_MEDICA_EXAMEN_FK" Association="Self.ATENCION_MEDICA_EXAMEN_FK">
+            <End Role="EXAMEN" EntitySet="EXAMEN" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="ATENCION_MEDICA_MEDICO_FK" Association="Self.ATENCION_MEDICA_MEDICO_FK">
+            <End Role="MEDICO" EntitySet="MEDICO" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="ATENCION_MEDICA_USUARIO_FK" Association="Self.ATENCION_MEDICA_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="EV_EMP_EMPRESA_FK" Association="Self.EV_EMP_EMPRESA_FK">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="EV_EMP" EntitySet="EV_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="EV_EMP_EVALUACION_FK" Association="Self.EV_EMP_EVALUACION_FK">
+            <End Role="EVALUACION" EntitySet="EVALUACION" />
+            <End Role="EV_EMP" EntitySet="EV_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="US_CAP_CAPACITACION_FK" Association="Self.US_CAP_CAPACITACION_FK">
+            <End Role="CAPACITACION" EntitySet="CAPACITACION" />
+            <End Role="US_CAP" EntitySet="US_CAP" />
+          </AssociationSet>
+          <AssociationSet Name="US_CAP_USUARIO_FK" Association="Self.US_CAP_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="US_CAP" EntitySet="US_CAP" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_EMPRESA_FK" Association="Self.USUARIO_EMPRESA_FK">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CAPACITACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LUGAR" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="US_CAP" Relationship="Self.US_CAP_CAPACITACION_FK" FromRole="CAPACITACION" ToRole="US_CAP" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="RUT_EMPRESA" />
+          </Key>
+          <Property Name="RUT_EMPRESA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EV_EMP" Relationship="Self.EV_EMP_EMPRESA_FK" FromRole="EMPRESA" ToRole="EV_EMP" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_EMPRESA_FK" FromRole="EMPRESA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="EV_EMP">
+          <Key>
+            <PropertyRef Name="ID_EV" />
+          </Key>
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="EVALUACION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPRESA_RUT_EMPRESA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OBSERVACION_TECNICO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACION_INGENIERO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_EV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_EV" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="Self.EV_EMP_EMPRESA_FK" FromRole="EV_EMP" ToRole="EMPRESA" />
+          <NavigationProperty Name="EVALUACION" Relationship="Self.EV_EMP_EVALUACION_FK" FromRole="EV_EMP" ToRole="EVALUACION" />
+        </EntityType>
+        <EntityType Name="EVALUACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EV_EMP" Relationship="Self.EV_EMP_EVALUACION_FK" FromRole="EVALUACION" ToRole="EV_EMP" />
+        </EntityType>
+        <EntityType Name="EXAMEN">
+          <Key>
+            <PropertyRef Name="ID_EVALUACION" />
+          </Key>
+          <Property Name="ID_EVALUACION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ATENCION_MEDICA" Relationship="Self.ATENCION_MEDICA_EXAMEN_FK" FromRole="EXAMEN" ToRole="ATENCION_MEDICA" />
+        </EntityType>
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="RUT_MEDICO" />
+          </Key>
+          <Property Name="RUT_MEDICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESPECIALIDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ATENCION_MEDICA" Relationship="Self.ATENCION_MEDICA_MEDICO_FK" FromRole="MEDICO" ToRole="ATENCION_MEDICA" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMPRESA_RUT_EMPRESA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="Self.USUARIO_EMPRESA_FK" FromRole="USUARIO" ToRole="EMPRESA" />
+          <NavigationProperty Name="ATENCION_MEDICA" Relationship="Self.ATENCION_MEDICA_USUARIO_FK" FromRole="USUARIO" ToRole="ATENCION_MEDICA" />
+          <NavigationProperty Name="US_CAP" Relationship="Self.US_CAP_USUARIO_FK" FromRole="USUARIO" ToRole="US_CAP" />
+        </EntityType>
+        <EntityType Name="ATENCION_MEDICA">
+          <Key>
+            <PropertyRef Name="USUARIO_RUT" />
+            <PropertyRef Name="MEDICO_RUT_MEDICO" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="LUGAR" />
+            <PropertyRef Name="EXAMEN_ID_EVALUACION" />
+            <PropertyRef Name="DIAGNOSTICO" />
+            <PropertyRef Name="ID_ATENCION" />
+          </Key>
+          <Property Name="USUARIO_RUT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MEDICO_RUT_MEDICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="LUGAR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXAMEN_ID_EVALUACION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DIAGNOSTICO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_ATENCION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="EXAMEN" Relationship="Self.ATENCION_MEDICA_EXAMEN_FK" FromRole="ATENCION_MEDICA" ToRole="EXAMEN" />
+          <NavigationProperty Name="MEDICO" Relationship="Self.ATENCION_MEDICA_MEDICO_FK" FromRole="ATENCION_MEDICA" ToRole="MEDICO" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.ATENCION_MEDICA_USUARIO_FK" FromRole="ATENCION_MEDICA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="US_CAP">
+          <Key>
+            <PropertyRef Name="USUARIO_RUT" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="CAPACITACION_ID" />
+            <PropertyRef Name="OBSERVACION" />
+          </Key>
+          <Property Name="USUARIO_RUT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="CAPACITACION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OBSERVACION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CAPACITACION" Relationship="Self.US_CAP_CAPACITACION_FK" FromRole="US_CAP" ToRole="CAPACITACION" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.US_CAP_USUARIO_FK" FromRole="US_CAP" ToRole="USUARIO" />
+        </EntityType>
+        <Association Name="US_CAP_CAPACITACION_FK">
+          <End Role="CAPACITACION" Type="Self.CAPACITACION" Multiplicity="1" />
+          <End Role="US_CAP" Type="Self.US_CAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAPACITACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="US_CAP">
+              <PropertyRef Name="CAPACITACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EV_EMP_EMPRESA_FK">
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="EV_EMP" Type="Self.EV_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT_EMPRESA" />
+            </Principal>
+            <Dependent Role="EV_EMP">
+              <PropertyRef Name="EMPRESA_RUT_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_EMPRESA_FK">
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT_EMPRESA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="EMPRESA_RUT_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EV_EMP_EVALUACION_FK">
+          <End Role="EVALUACION" Type="Self.EVALUACION" Multiplicity="1" />
+          <End Role="EV_EMP" Type="Self.EV_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EVALUACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EV_EMP">
+              <PropertyRef Name="EVALUACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATENCION_MEDICA_EXAMEN_FK">
+          <End Role="EXAMEN" Type="Self.EXAMEN" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXAMEN">
+              <PropertyRef Name="ID_EVALUACION" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="EXAMEN_ID_EVALUACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATENCION_MEDICA_MEDICO_FK">
+          <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICO">
+              <PropertyRef Name="RUT_MEDICO" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="MEDICO_RUT_MEDICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATENCION_MEDICA_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="ATENCION_MEDICA" Type="Self.ATENCION_MEDICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ATENCION_MEDICA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="US_CAP_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="US_CAP" Type="Self.US_CAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="US_CAP">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CAPACITACION" EntityType="Self.CAPACITACION" />
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
+          <EntitySet Name="EV_EMP" EntityType="Self.EV_EMP" />
+          <EntitySet Name="EVALUACION" EntityType="Self.EVALUACION" />
+          <EntitySet Name="EXAMEN" EntityType="Self.EXAMEN" />
+          <EntitySet Name="MEDICO" EntityType="Self.MEDICO" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <EntitySet Name="ATENCION_MEDICA" EntityType="Self.ATENCION_MEDICA" />
+          <EntitySet Name="US_CAP" EntityType="Self.US_CAP" />
+          <AssociationSet Name="US_CAP_CAPACITACION_FK" Association="Self.US_CAP_CAPACITACION_FK">
+            <End Role="CAPACITACION" EntitySet="CAPACITACION" />
+            <End Role="US_CAP" EntitySet="US_CAP" />
+          </AssociationSet>
+          <AssociationSet Name="EV_EMP_EMPRESA_FK" Association="Self.EV_EMP_EMPRESA_FK">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="EV_EMP" EntitySet="EV_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_EMPRESA_FK" Association="Self.USUARIO_EMPRESA_FK">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="EV_EMP_EVALUACION_FK" Association="Self.EV_EMP_EVALUACION_FK">
+            <End Role="EVALUACION" EntitySet="EVALUACION" />
+            <End Role="EV_EMP" EntitySet="EV_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="ATENCION_MEDICA_EXAMEN_FK" Association="Self.ATENCION_MEDICA_EXAMEN_FK">
+            <End Role="EXAMEN" EntitySet="EXAMEN" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="ATENCION_MEDICA_MEDICO_FK" Association="Self.ATENCION_MEDICA_MEDICO_FK">
+            <End Role="MEDICO" EntitySet="MEDICO" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="ATENCION_MEDICA_USUARIO_FK" Association="Self.ATENCION_MEDICA_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ATENCION_MEDICA" EntitySet="ATENCION_MEDICA" />
+          </AssociationSet>
+          <AssociationSet Name="US_CAP_USUARIO_FK" Association="Self.US_CAP_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="US_CAP" EntitySet="US_CAP" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="CAPACITACION">
+            <EntityTypeMapping TypeName="Model.CAPACITACION">
+              <MappingFragment StoreEntitySet="CAPACITACION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPRESA">
+            <EntityTypeMapping TypeName="Model.EMPRESA">
+              <MappingFragment StoreEntitySet="EMPRESA">
+                <ScalarProperty Name="RUT_EMPRESA" ColumnName="RUT_EMPRESA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EV_EMP">
+            <EntityTypeMapping TypeName="Model.EV_EMP">
+              <MappingFragment StoreEntitySet="EV_EMP">
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="EVALUACION_ID" ColumnName="EVALUACION_ID" />
+                <ScalarProperty Name="EMPRESA_RUT_EMPRESA" ColumnName="EMPRESA_RUT_EMPRESA" />
+                <ScalarProperty Name="OBSERVACION_TECNICO" ColumnName="OBSERVACION_TECNICO" />
+                <ScalarProperty Name="OBSERVACION_INGENIERO" ColumnName="OBSERVACION_INGENIERO" />
+                <ScalarProperty Name="ESTADO_EV" ColumnName="ESTADO_EV" />
+                <ScalarProperty Name="ID_EV" ColumnName="ID_EV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EVALUACION">
+            <EntityTypeMapping TypeName="Model.EVALUACION">
+              <MappingFragment StoreEntitySet="EVALUACION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EXAMEN">
+            <EntityTypeMapping TypeName="Model.EXAMEN">
+              <MappingFragment StoreEntitySet="EXAMEN">
+                <ScalarProperty Name="ID_EVALUACION" ColumnName="ID_EVALUACION" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICO">
+            <EntityTypeMapping TypeName="Model.MEDICO">
+              <MappingFragment StoreEntitySet="MEDICO">
+                <ScalarProperty Name="RUT_MEDICO" ColumnName="RUT_MEDICO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="Model.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="EMPRESA_RUT_EMPRESA" ColumnName="EMPRESA_RUT_EMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATENCION_MEDICA">
+            <EntityTypeMapping TypeName="Model.ATENCION_MEDICA">
+              <MappingFragment StoreEntitySet="ATENCION_MEDICA">
+                <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+                <ScalarProperty Name="MEDICO_RUT_MEDICO" ColumnName="MEDICO_RUT_MEDICO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+                <ScalarProperty Name="EXAMEN_ID_EVALUACION" ColumnName="EXAMEN_ID_EVALUACION" />
+                <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+                <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="US_CAP">
+            <EntityTypeMapping TypeName="Model.US_CAP">
+              <MappingFragment StoreEntitySet="US_CAP">
+                <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CAPACITACION_ID" ColumnName="CAPACITACION_ID" />
+                <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -39,7 +39,7 @@ namespace WebService
             else {
                 rut_login = "RUT_USUARIO";
             }
-            string meme = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
             OracleConnection conn = new OracleConnection(meme);
             try
             {
@@ -162,7 +162,7 @@ namespace WebService
         [WebMethod]
         public string DevuelveTipo(string rut, string tipo)
         {
-            string str = "DATA SOURCE=190.163.62.242:1521/DBORACLE;USER ID=GRUPOSAFE; Password=portafolio";
+            string str = "DATA SOURCE=190.161.202.171:1521/DBORACLE;USER ID=GRUPOSAFE; Password=portafolio";
 
             OracleConnection conn = new OracleConnection(str);
             string us = "";
@@ -263,7 +263,7 @@ namespace WebService
 
 
 
-              string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
               OracleConnection oraconn = new OracleConnection(strConnectionString);
               oraconn.Open();
               OracleCommand oracmd = new OracleCommand();
@@ -291,7 +291,7 @@ namespace WebService
           [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
           {
-              string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
               OracleConnection oraconn = new OracleConnection(strConnectionString);
               oraconn.Open();
               OracleCommand oracmd = new OracleCommand();
@@ -318,7 +318,7 @@ namespace WebService
           [WebMethod]  
           public  bool GuardarCategoria(string Item, int id)
           {
-              string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
               OracleConnection oraconn = new OracleConnection(strConnectionString);
               oraconn.Open();
               OracleCommand cmd = new OracleCommand("PKG_EVALUACION.Pro_AgregarCategoria", oraconn);
@@ -340,7 +340,7 @@ namespace WebService
               List<categoria> listado = new List<categoria>();
               if (conexion.validarconexion())
               {
-                  string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+                  string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
                   OracleConnection oraconn = new OracleConnection(strConnectionString);
                   oraconn.Open();
                   OracleCommand oracmd = new OracleCommand();
@@ -384,7 +384,7 @@ namespace WebService
               List<categoria> listado = new List<categoria>();
               if (conexion.validarconexion())
               {
-                  string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+                  string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
                   OracleConnection oraconn = new OracleConnection(strConnectionString);
                   oraconn.Open();
                   OracleCommand oracmd = new OracleCommand();
@@ -426,7 +426,7 @@ namespace WebService
         [WebMethod]
         public  bool GuardarCapacitacion(string area,DateTime fecha, string tema,string expo,int asisten,string empresa,int tipocap )
         {
-            string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
             OracleConnection oraconn = new OracleConnection(strConnectionString);
             try
             {
@@ -469,7 +469,7 @@ namespace WebService
 
 
 
-            string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
             OracleConnection oraconn = new OracleConnection(strConnectionString);
             oraconn.Open();
             OracleCommand oracmd = new OracleCommand();
@@ -503,7 +503,7 @@ namespace WebService
             List<capacitacion> listado = new List<capacitacion>();
             if (conexion.validarconexion())
             {
-                string strConnectionString = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+                string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
                 OracleConnection oraconn = new OracleConnection(strConnectionString);
                 oraconn.Open();
                 OracleCommand oracmd = new OracleCommand();

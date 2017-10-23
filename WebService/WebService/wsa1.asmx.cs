@@ -22,12 +22,6 @@ namespace WebService
     {
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
-
-        [WebMethod]
         public string Validar(string rut, string pass, string tipo)
         {
             string us = "";
@@ -100,64 +94,8 @@ namespace WebService
 
 
         }
-
-        //[WebMethod]
-        //public bool Isvalido(string rut, string tipo) {
-        //    bool memito;
-        //    string rut_login = "";
-        //    if (tipo == "Empresa")
-        //    {
-        //        rut_login = "RUT_EMPRESA";
-        //    }
-        //    else
-        //    {
-        //        rut_login = "RUT_USUARIO";
-        //    }
-        //    string meme = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-        //    OracleConnection conn = new OracleConnection(meme);
-        //    conn.Open();
-
-        //    OracleParameter param = new OracleParameter();
-        //    param.OracleDbType = OracleDbType.Decimal;
-
-        //    OracleCommand cmd = new OracleCommand();
-        //    cmd.Connection = conn;
-        //    cmd.Parameters.Add(param);
-        //    cmd.CommandText = "SELECT ESTADO FROM " + tipo + " WHERE " + rut_login + " = '" + rut;
-        //    cmd.CommandType = CommandType.Text;
-
-        //    string us = "";
-
-        //    try
-        //    {
-        //        cmd.ExecuteNonQuery();
-        //        OracleDataReader dr = cmd.ExecuteReader();
-        //        dr.Read();
-
-        //        if (dr.GetString(0) == "inactivo")
-        //        {
-        //            memito = false; 
-        //        }
-        //        else
-        //        {
-        //            memito = true;
-        //        }
-
-
-
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        us = "nulo";
-        //    }
-
-
+        //********************************************************************************
         
-
-
-        //    return memito;
-        //}
 
         [WebMethod]
         public string DevuelveTipo(string rut, string tipo)
@@ -256,6 +194,9 @@ namespace WebService
 
         }
 
+        //*******************************************************************************
+
+
           [WebMethod]
           public List<empresa> GetlistarEmpresaList()
           {
@@ -315,114 +256,11 @@ namespace WebService
               return milista;
              
           }
-          [WebMethod]  
-          public  bool GuardarCategoria(string Item, int id)
-          {
-              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-              OracleConnection oraconn = new OracleConnection(strConnectionString);
-              oraconn.Open();
-              OracleCommand cmd = new OracleCommand("PKG_EVALUACION.Pro_AgregarCategoria", oraconn);
-              cmd.CommandType = CommandType.StoredProcedure;
-
-              cmd.Parameters.Add("p_nombre", "varchar2").Value = Item;
-              cmd.Parameters.Add("p_estado", "varchar2").Value = "activo";
-              cmd.Parameters.Add("p_tipo", "number").Value = id;
-
-              cmd.ExecuteNonQuery();
-              oraconn.Close();
-              return true;
-          }
-
-            [WebMethod]
-          public  List<categoria> ListarCategorias()
-          {
-
-              List<categoria> listado = new List<categoria>();
-              if (conexion.validarconexion())
-              {
-                  string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-                  OracleConnection oraconn = new OracleConnection(strConnectionString);
-                  oraconn.Open();
-                  OracleCommand oracmd = new OracleCommand();
-                  oracmd.Parameters.Add("ListarCat", OracleDbType.RefCursor, ParameterDirection.Output);
-                  oracmd.CommandText = "PKG_EVALUACION.Listar_cat";
-                  oracmd.CommandType = CommandType.StoredProcedure;
-                  oracmd.Connection = oraconn;
-                  OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                  DataSet ds = new DataSet();
-                  da.Fill(ds);
 
 
 
-                  OracleDataReader dr = oracmd.ExecuteReader();
-
-
-
-                  while (dr.Read())
-                  {
-                      categoria ev = new categoria();
-                      ev.id = int.Parse(dr["ID_CAT"].ToString());
-                      ev.nombre = dr["NOMBRE"].ToString();
-                      ev.estado = "Activo";
-
-                      listado.Add(ev);
-                  }
-
-
-                  return listado;
-              }
-              else
-              {
-                  return listado;
-              }
-
-          }
-        [WebMethod]
-          public  List<categoria> ListarCategoriasXtipo(int id)
-          {
-
-              List<categoria> listado = new List<categoria>();
-              if (conexion.validarconexion())
-              {
-                  string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-                  OracleConnection oraconn = new OracleConnection(strConnectionString);
-                  oraconn.Open();
-                  OracleCommand oracmd = new OracleCommand();
-                  oracmd.Parameters.Add(new OracleParameter("idc", id));
-                  oracmd.Parameters.Add("ListarCat", OracleDbType.RefCursor, ParameterDirection.Output);
-                  oracmd.CommandText = "PKG_EVALUACION.Listar_catXtipo";
-                  oracmd.CommandType = CommandType.StoredProcedure;
-                  oracmd.Connection = oraconn;
-                  OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                  DataSet ds = new DataSet();
-                  da.Fill(ds);
-
-
-
-                  OracleDataReader dr = oracmd.ExecuteReader();
-
-
-
-                  while (dr.Read())
-                  {
-                      categoria ev = new categoria();
-                      ev.id = int.Parse(dr["ID_CAT"].ToString());
-                      ev.nombre = dr["NOMBRE"].ToString();
-                      ev.estado = "Activo";
-
-                      listado.Add(ev);
-                  }
-
-                  oraconn.Close();
-                  return listado;
-              }
-              else
-              {
-               
-                  return listado;
-              }
-
-          }
+        //********************************************************************************************
+       
         [WebMethod]
         public  bool GuardarCapacitacion(string area,DateTime fecha, string tema,string expo,int asisten,string empresa,int tipocap )
         {
@@ -547,6 +385,67 @@ namespace WebService
             }
 
         }
+        //**************************************************************************************
+        //*****************Ws Modulo evaluaciones
+        //ws Categoria
+        [WebMethod]
+        public bool E_guardarCategoria(string cat, int id)
+        {
+            return Datos.DatosCategoria.GuardarCategoria(cat, id);
+        }
+
+
+        [WebMethod]
+        public List<categoria> E_listadoCategoria()
+        {
+            return Datos.DatosCategoria.ListarCategoria();
+        }
+
+        [WebMethod]
+        public List<categoria> E_listarCategoriasXtipo(int id)
+        {
+            return Datos.DatosCategoria.listarCategoriaXtipo(id);
+        }
+
+        //WS pregunta
+        [WebMethod]
+        public bool E_agregarPregunta(int id, string p)
+        {
+            return Datos.DatosPregunta.AgregarPregunta(id, p);
+        }
+        [WebMethod]
+        public List<Pregunta> E_listarPreguntaXcategoria(int id)
+        {
+            return Datos.DatosPregunta.ListadoPreguntasXcat(id);
+        }
+
+        //wsEmpresa
+        [WebMethod]
+        public List<empresa> E_listarempresa()
+        {
+            return Datos.DatosEmpresa.ListadoEmpresas();
+        }
+        //Tipo Evaluaciones
+        [WebMethod]
+        public List<TipoEvaluacion> E_listarTipoEvaluacione()
+        {
+            return Datos.DatosTipoEvaluacion.ListarTipo();
+        }
+        //evaluacion
+        [WebMethod]
+        public bool E_agregarEvaluacion(string idE, int idT, string rut, DateTime fecha, string obsTec, string recIng, string estado)
+        {
+            return Datos.DatosEvaluaciones.AgregarEvaluaciones(idE,idT,rut,fecha,obsTec,recIng,estado);
+        }
+
+        [WebMethod]
+        public bool E_modificarEvaluacion(int id, string p)
+        {
+            return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p);
+        }
+
+
+
     }
 
 

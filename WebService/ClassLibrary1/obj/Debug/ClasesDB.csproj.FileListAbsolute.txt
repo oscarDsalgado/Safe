@@ -11,7 +11,7 @@ C:\Users\oscar\Desktop\version del viernes\WebService\ClassLibrary1\obj\Debug\Cl
 C:\Users\oscar\Desktop\version del viernes\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\bin\Debug\ClassLibrary1.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
-C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csproj.CoreCompileInputs.cache
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache

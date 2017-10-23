@@ -11,3 +11,10 @@ C:\Users\oscar\Desktop\version del viernes\portafolio1\BLL\obj\Debug\BLL.csprojR
 C:\Users\oscar\Desktop\version del viernes\portafolio1\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\oscar\Desktop\version del viernes\portafolio1\BLL\obj\Debug\BLL.dll
 C:\Users\oscar\Desktop\version del viernes\portafolio1\BLL\obj\Debug\BLL.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\bin\Debug\BLL.dll.config
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\bin\Debug\BLL.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\bin\Debug\BLL.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.pdb

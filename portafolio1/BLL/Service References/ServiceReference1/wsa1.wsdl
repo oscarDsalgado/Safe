@@ -2,16 +2,6 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Validar">
         <s:complexType>
           <s:sequence>
@@ -85,58 +75,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GuardarCategoria">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Item" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GuardarCategoriaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GuardarCategoriaResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListarCategorias">
-        <s:complexType />
-      </s:element>
-      <s:element name="ListarCategoriasResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListarCategoriasResult" type="tns:ArrayOfCategoria" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCategoria">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="categoria" nillable="true" type="tns:categoria" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="categoria">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="idTipo" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="ListarCategoriasXtipo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListarCategoriasXtipoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListarCategoriasXtipoResult" type="tns:ArrayOfCategoria" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GuardarCapacitacion">
         <s:complexType>
           <s:sequence>
@@ -206,14 +144,169 @@
           <s:element minOccurs="0" maxOccurs="1" name="Tipo_cap" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="E_guardarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_guardarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="E_guardarCategoriaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listadoCategoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="E_listadoCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listadoCategoriaResult" type="tns:ArrayOfCategoria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCategoria">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="categoria" nillable="true" type="tns:categoria" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="categoria">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="E_listarCategoriasXtipo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listarCategoriasXtipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listarCategoriasXtipoResult" type="tns:ArrayOfCategoria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_agregarPregunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_agregarPreguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="E_agregarPreguntaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listarPreguntaXcategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listarPreguntaXcategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listarPreguntaXcategoriaResult" type="tns:ArrayOfPregunta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPregunta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pregunta" nillable="true" type="tns:Pregunta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pregunta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pregunta1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cat_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="E_listarempresa">
+        <s:complexType />
+      </s:element>
+      <s:element name="E_listarempresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listarempresaResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listarTipoEvaluacione">
+        <s:complexType />
+      </s:element>
+      <s:element name="E_listarTipoEvaluacioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listarTipoEvaluacioneResult" type="tns:ArrayOfTipoEvaluacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoEvaluacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoEvaluacion" nillable="true" type="tns:TipoEvaluacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoEvaluacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="E_agregarEvaluacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idT" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="obsTec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recIng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_agregarEvaluacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="E_agregarEvaluacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_modificarEvaluacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_modificarEvaluacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="E_modificarEvaluacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
   <wsdl:message name="ValidarSoapIn">
     <wsdl:part name="parameters" element="tns:Validar" />
   </wsdl:message>
@@ -238,24 +331,6 @@
   <wsdl:message name="GetListarTipoCapSoapOut">
     <wsdl:part name="parameters" element="tns:GetListarTipoCapResponse" />
   </wsdl:message>
-  <wsdl:message name="GuardarCategoriaSoapIn">
-    <wsdl:part name="parameters" element="tns:GuardarCategoria" />
-  </wsdl:message>
-  <wsdl:message name="GuardarCategoriaSoapOut">
-    <wsdl:part name="parameters" element="tns:GuardarCategoriaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarCategoriasSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarCategorias" />
-  </wsdl:message>
-  <wsdl:message name="ListarCategoriasSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarCategoriasResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarCategoriasXtipoSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarCategoriasXtipo" />
-  </wsdl:message>
-  <wsdl:message name="ListarCategoriasXtipoSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarCategoriasXtipoResponse" />
-  </wsdl:message>
   <wsdl:message name="GuardarCapacitacionSoapIn">
     <wsdl:part name="parameters" element="tns:GuardarCapacitacion" />
   </wsdl:message>
@@ -274,11 +349,61 @@
   <wsdl:message name="ListarCapacitacionesSoapOut">
     <wsdl:part name="parameters" element="tns:ListarCapacitacionesResponse" />
   </wsdl:message>
+  <wsdl:message name="E_guardarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="E_guardarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:E_guardarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listadoCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listadoCategoria" />
+  </wsdl:message>
+  <wsdl:message name="E_listadoCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listadoCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listarCategoriasXtipoSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listarCategoriasXtipo" />
+  </wsdl:message>
+  <wsdl:message name="E_listarCategoriasXtipoSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listarCategoriasXtipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_agregarPreguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:E_agregarPregunta" />
+  </wsdl:message>
+  <wsdl:message name="E_agregarPreguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:E_agregarPreguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listarPreguntaXcategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listarPreguntaXcategoria" />
+  </wsdl:message>
+  <wsdl:message name="E_listarPreguntaXcategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listarPreguntaXcategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listarempresaSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listarempresa" />
+  </wsdl:message>
+  <wsdl:message name="E_listarempresaSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listarempresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listarTipoEvaluacioneSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listarTipoEvaluacione" />
+  </wsdl:message>
+  <wsdl:message name="E_listarTipoEvaluacioneSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listarTipoEvaluacioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_agregarEvaluacionSoapIn">
+    <wsdl:part name="parameters" element="tns:E_agregarEvaluacion" />
+  </wsdl:message>
+  <wsdl:message name="E_agregarEvaluacionSoapOut">
+    <wsdl:part name="parameters" element="tns:E_agregarEvaluacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_modificarEvaluacionSoapIn">
+    <wsdl:part name="parameters" element="tns:E_modificarEvaluacion" />
+  </wsdl:message>
+  <wsdl:message name="E_modificarEvaluacionSoapOut">
+    <wsdl:part name="parameters" element="tns:E_modificarEvaluacionResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsa1Soap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Validar">
       <wsdl:input message="tns:ValidarSoapIn" />
       <wsdl:output message="tns:ValidarSoapOut" />
@@ -295,18 +420,6 @@
       <wsdl:input message="tns:GetListarTipoCapSoapIn" />
       <wsdl:output message="tns:GetListarTipoCapSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GuardarCategoria">
-      <wsdl:input message="tns:GuardarCategoriaSoapIn" />
-      <wsdl:output message="tns:GuardarCategoriaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategorias">
-      <wsdl:input message="tns:ListarCategoriasSoapIn" />
-      <wsdl:output message="tns:ListarCategoriasSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategoriasXtipo">
-      <wsdl:input message="tns:ListarCategoriasXtipoSoapIn" />
-      <wsdl:output message="tns:ListarCategoriasXtipoSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GuardarCapacitacion">
       <wsdl:input message="tns:GuardarCapacitacionSoapIn" />
       <wsdl:output message="tns:GuardarCapacitacionSoapOut" />
@@ -319,18 +432,45 @@
       <wsdl:input message="tns:ListarCapacitacionesSoapIn" />
       <wsdl:output message="tns:ListarCapacitacionesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="E_guardarCategoria">
+      <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
+      <wsdl:output message="tns:E_guardarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoCategoria">
+      <wsdl:input message="tns:E_listadoCategoriaSoapIn" />
+      <wsdl:output message="tns:E_listadoCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listarCategoriasXtipo">
+      <wsdl:input message="tns:E_listarCategoriasXtipoSoapIn" />
+      <wsdl:output message="tns:E_listarCategoriasXtipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarPregunta">
+      <wsdl:input message="tns:E_agregarPreguntaSoapIn" />
+      <wsdl:output message="tns:E_agregarPreguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listarPreguntaXcategoria">
+      <wsdl:input message="tns:E_listarPreguntaXcategoriaSoapIn" />
+      <wsdl:output message="tns:E_listarPreguntaXcategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listarempresa">
+      <wsdl:input message="tns:E_listarempresaSoapIn" />
+      <wsdl:output message="tns:E_listarempresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listarTipoEvaluacione">
+      <wsdl:input message="tns:E_listarTipoEvaluacioneSoapIn" />
+      <wsdl:output message="tns:E_listarTipoEvaluacioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarEvaluacion">
+      <wsdl:input message="tns:E_agregarEvaluacionSoapIn" />
+      <wsdl:output message="tns:E_agregarEvaluacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_modificarEvaluacion">
+      <wsdl:input message="tns:E_modificarEvaluacionSoapIn" />
+      <wsdl:output message="tns:E_modificarEvaluacionSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsa1Soap" type="tns:wsa1Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Validar">
       <soap:operation soapAction="http://tempuri.org/Validar" style="document" />
       <wsdl:input>
@@ -367,33 +507,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GuardarCategoria">
-      <soap:operation soapAction="http://tempuri.org/GuardarCategoria" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategorias">
-      <soap:operation soapAction="http://tempuri.org/ListarCategorias" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategoriasXtipo">
-      <soap:operation soapAction="http://tempuri.org/ListarCategoriasXtipo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GuardarCapacitacion">
       <soap:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
       <wsdl:input>
@@ -421,18 +534,90 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="E_guardarCategoria">
+      <soap:operation soapAction="http://tempuri.org/E_guardarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoCategoria">
+      <soap:operation soapAction="http://tempuri.org/E_listadoCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarCategoriasXtipo">
+      <soap:operation soapAction="http://tempuri.org/E_listarCategoriasXtipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarPregunta">
+      <soap:operation soapAction="http://tempuri.org/E_agregarPregunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarPreguntaXcategoria">
+      <soap:operation soapAction="http://tempuri.org/E_listarPreguntaXcategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarempresa">
+      <soap:operation soapAction="http://tempuri.org/E_listarempresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarTipoEvaluacione">
+      <soap:operation soapAction="http://tempuri.org/E_listarTipoEvaluacione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarEvaluacion">
+      <soap:operation soapAction="http://tempuri.org/E_agregarEvaluacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_modificarEvaluacion">
+      <soap:operation soapAction="http://tempuri.org/E_modificarEvaluacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsa1Soap12" type="tns:wsa1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Validar">
       <soap12:operation soapAction="http://tempuri.org/Validar" style="document" />
       <wsdl:input>
@@ -469,33 +654,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GuardarCategoria">
-      <soap12:operation soapAction="http://tempuri.org/GuardarCategoria" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategorias">
-      <soap12:operation soapAction="http://tempuri.org/ListarCategorias" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarCategoriasXtipo">
-      <soap12:operation soapAction="http://tempuri.org/ListarCategoriasXtipo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GuardarCapacitacion">
       <soap12:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
       <wsdl:input>
@@ -516,6 +674,87 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitaciones">
       <soap12:operation soapAction="http://tempuri.org/ListarCapacitaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_guardarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/E_guardarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoCategoria">
+      <soap12:operation soapAction="http://tempuri.org/E_listadoCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarCategoriasXtipo">
+      <soap12:operation soapAction="http://tempuri.org/E_listarCategoriasXtipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarPregunta">
+      <soap12:operation soapAction="http://tempuri.org/E_agregarPregunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarPreguntaXcategoria">
+      <soap12:operation soapAction="http://tempuri.org/E_listarPreguntaXcategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarempresa">
+      <soap12:operation soapAction="http://tempuri.org/E_listarempresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listarTipoEvaluacione">
+      <soap12:operation soapAction="http://tempuri.org/E_listarTipoEvaluacione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_agregarEvaluacion">
+      <soap12:operation soapAction="http://tempuri.org/E_agregarEvaluacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_modificarEvaluacion">
+      <soap12:operation soapAction="http://tempuri.org/E_modificarEvaluacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

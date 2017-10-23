@@ -43,6 +43,7 @@
     <Compile Include="capacitacion.cs" />
     <Compile Include="cap_tipo.cs" />
     <Compile Include="categoria.cs" />
+    <Compile Include="Detalle_evaluacion.cs" />
     <Compile Include="empresa.cs" />
     <Compile Include="Evaluacion.cs" />
     <Compile Include="Pregunta.cs" />

@@ -14,7 +14,7 @@ namespace BLL
         public string devuelveNombre(string us, string pw, string tipo) {
 
             ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
-
+            
             return ws.Validar(us, pw, tipo);
         
         }

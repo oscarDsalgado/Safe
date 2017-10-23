@@ -12,6 +12,12 @@ namespace ClassLibrary1
         private string nombre;
         private string estado;
 
+
+        public TipoEvaluacion()
+        {
+
+        }
+
         public TipoEvaluacion(int id, string nombre, string estado)
         {
             this.Id = id;

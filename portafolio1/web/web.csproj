@@ -163,6 +163,7 @@
     <Content Include="MedicoExamEdit.aspx" />
     <Content Include="IngenieroListEv.aspx" />
     <Content Include="IngenieroInfoAdd.aspx" />
+    <Content Include="TecnicoCrearCategorias.aspx" />
     <Content Include="TrabajadorHistA.aspx" />
     <Content Include="TrabajadorHistV.aspx" />
     <Content Include="TrabajadorHistC.aspx" />
@@ -356,6 +357,13 @@
     </Compile>
     <Compile Include="IngenieroInfoAdd.aspx.designer.cs">
       <DependentUpon>IngenieroInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicoCrearCategorias.aspx.cs">
+      <DependentUpon>TecnicoCrearCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicoCrearCategorias.aspx.designer.cs">
+      <DependentUpon>TecnicoCrearCategorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrabajadorHistA.aspx.cs">
       <DependentUpon>TrabajadorHistA.aspx</DependentUpon>

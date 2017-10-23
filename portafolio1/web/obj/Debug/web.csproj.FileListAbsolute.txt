@@ -22,3 +22,17 @@ C:\Users\oscar\Desktop\version del viernes\portafolio1\web\obj\Debug\web.csprojR
 C:\Users\oscar\Desktop\version del viernes\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\Users\oscar\Desktop\version del viernes\portafolio1\web\obj\Debug\web.dll
 C:\Users\oscar\Desktop\version del viernes\portafolio1\web\obj\Debug\web.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\web.dll.config
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\web.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\web.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\BLL.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\EntityFramework.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\EntityFramework.SqlServer.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\BLL.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\BLL.dll.config
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\EntityFramework.xml
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\bin\EntityFramework.SqlServer.xml
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.pdb

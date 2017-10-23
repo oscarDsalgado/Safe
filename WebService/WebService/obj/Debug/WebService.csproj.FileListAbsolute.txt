@@ -17,3 +17,16 @@ C:\Users\oscar\Desktop\version del viernes\WebService\WebService\obj\Debug\WebSe
 C:\Users\oscar\Desktop\version del viernes\WebService\WebService\obj\Debug\WebService.csproj.CoreCompileInputs.cache
 C:\Users\oscar\Desktop\version del viernes\WebService\WebService\obj\Debug\WebService.dll
 C:\Users\oscar\Desktop\version del viernes\WebService\WebService\obj\Debug\WebService.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\WebService.dll.config
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\WebService.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\WebService.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\ClassLibrary1.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Oracle.ManagedDataAccess.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\ClassLibrary1.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\obj\Debug\WebService.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\obj\Debug\WebService.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\obj\Debug\WebService.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.dll
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.pdb
+C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.dll.config

@@ -37,15 +37,7 @@
               <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
               <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
               <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-               <asp:TemplateField>
-                  <ItemTemplate>
-                
-              <asp:RadioButton ID="rb_Yes" runat="server" GroupName="GpName" Text="Yes" OnCheckedChanged="rb_Yes_Click" AutoPostBack="true" />
-
-                      <asp:RadioButton ID="rb_No" runat="server" GroupName="GpName" Text="No" OnCheckedChanged="rb_No_Click" AutoPostBack="true"/>
-
-                  </ItemTemplate>
-              </asp:TemplateField>
+             
              
           </Columns>
       </asp:GridView>

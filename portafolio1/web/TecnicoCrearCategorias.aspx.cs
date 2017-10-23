@@ -32,27 +32,7 @@ namespace web
 
 
 
-        protected void rb_Yes_Click(object sender, EventArgs e)
-        {
-            RadioButton rb_Yes = (RadioButton)sender;
-            GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
-            if (((RadioButton)grid_row.FindControl("rb_Yes")).Checked == true)
-            {
-
-                System.Windows.Forms.MessageBox.Show("si", grid_row.Cells[1].Text, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
-
-            }
-        }
-
-        protected void rb_No_Click(object sender, EventArgs e)
-        {
-            RadioButton rb_Yes = (RadioButton)sender;
-            GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
-            if (((RadioButton)grid_row.FindControl("rb_No")).Checked == true)
-            {
-                System.Windows.Forms.MessageBox.Show("no", grid_row.Cells[1].Text, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
-            }
-        }
+       
 
 
 

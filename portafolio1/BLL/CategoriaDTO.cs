@@ -40,6 +40,13 @@ namespace BLL
             return ws.E_listadoCategoria();
         }
 
+        public bool AgregarCategoria(int id, string nombre)
+        {
+            return ws.E_guardarCategoria(nombre, id);
+        }
+
+
+
 
 
     }

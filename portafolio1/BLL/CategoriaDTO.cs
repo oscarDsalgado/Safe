@@ -28,6 +28,10 @@ namespace BLL
             this.Id = id;
         }
 
+        public CategoriaDTO()
+        {
+
+        }
 
         public int Id_cat { get => id_cat; set => id_cat = value; }
         public string Nombre { get => nombre; set => nombre = value; }

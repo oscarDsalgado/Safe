@@ -42,6 +42,9 @@ namespace web
             string categoria = TextBox1.Text;
             int id = int.Parse(DropDownList1.SelectedItem.Value);
             //BLL.DTOCategoria.AgregarCategoria(categoria, id);
+
+            BLL.CategoriaDTO cat = new BLL.CategoriaDTO();
+            cat.AgregarCategoria(id,categoria);
             
             GridView1.DataBind();
 
